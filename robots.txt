@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mallorykron.github.io/flow-state-yoga/sitemap.xml
