@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,129 +6,610 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Yoga Classes in Iowa City | Flow State Yoga</title>
-<meta name="description" content="Explore yoga classes in Iowa City at Flow State Yoga, with Power Yoga, Hot Yoga, Restorative Yoga, and beginner-friendly options.">
+  <meta name="description" content="Explore yoga classes in Iowa City at Flow State Yoga, with Power Yoga, Hot Yoga, Restorative Yoga, and beginner-friendly options.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --sage: #647a68;
+      --deep: #293d32;
+      --cream: #faf8f3;
+      --sand: #eee7dc;
+      --muted: #6c756c;
+      --gold: #c6a77b;
+      --white: #ffffff;
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      color: #333;
-      background-color: #faf8f5;
-      line-height: 1.6;
+      font-family: 'DM Sans', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--deep);
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     .notice {
-      background-color: #3f5145;
-      color: white;
+      background: var(--deep);
+      color: #fff;
       text-align: center;
-      padding: 10px 20px;
-      font-size: 14px;
+      padding: 10px 18px;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
+    /* NAVIGATION */
+
     nav {
-      background-color: white;
-      padding: 20px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 22px 7%;
+      background: rgba(250,248,243,0.98);
+      gap: 20px;
       flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #3f5145;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -1px;
     }
 
-    nav a {
-      color: #333;
-      text-decoration: none;
-      margin-left: 20px;
+    .logo span {
+      color: var(--sage);
     }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage);
+    }
+
+    .nav-button {
+      background: var(--deep);
+      color: white !important;
+      padding: 12px 22px;
+      border-radius: 30px;
+    }
+
+    /* HERO */
 
     .hero {
-      padding: 100px 10%;
-      text-align: center;
-      background-color: #e8e1d8;
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding: 100px 9%;
+      background:
+        linear-gradient(90deg, rgba(24,40,31,0.78), rgba(24,40,31,0.12)),
+        url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1800&q=85');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 22px;
+    }
+
+    .hero .eyebrow {
+      color: #e7d9c4;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 500;
     }
 
     .hero h1 {
-      font-size: 48px;
-      color: #3f5145;
-      margin-bottom: 15px;
+      font-size: clamp(52px, 7vw, 94px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 em {
+      font-weight: 400;
+      color: #e9d7bd;
     }
 
     .hero h2 {
-      font-size: 22px;
-      font-weight: normal;
-      margin-bottom: 25px;
+      font-size: 23px;
+      margin-bottom: 22px;
+      font-weight: 400;
     }
 
     .hero p {
-      max-width: 750px;
+      font-size: 16px;
+      max-width: 580px;
+      color: #f2f0eb;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-light {
+      background: var(--cream);
+      color: var(--deep);
+    }
+
+    .btn-dark {
+      background: var(--deep);
+      color: white;
+    }
+
+    .hero-secondary {
+      margin-left: 18px;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 18px;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 105px 8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+      max-width: 1450px;
       margin: auto;
     }
 
-    .classes {
-      padding: 70px 8%;
+    .intro-photo {
+      position: relative;
+    }
+
+    .intro-photo img {
+      height: 540px;
+      border-radius: 180px 180px 12px 12px;
+    }
+
+    .intro-photo::after {
+      content: 'BREATHE • MOVE • BLOOM';
+      position: absolute;
+      bottom: 25px;
+      right: -20px;
+      background: var(--sand);
+      padding: 22px;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      width: 115px;
+      height: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transform: rotate(12deg);
+    }
+
+    .intro-copy .eyebrow,
+    .section-heading .eyebrow {
+      color: var(--sage);
+    }
+
+    .intro h2,
+    .section-heading h2,
+    .beginner h2 {
+      font-size: clamp(36px, 4vw, 56px);
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+
+    .intro h2 em {
+      color: var(--sage);
+      font-weight: 400;
+    }
+
+    .intro p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .intro .btn {
+      margin-top: 12px;
+    }
+
+    /* FEATURE STRIP */
+
+    .features {
+      background: var(--sand);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 35px 8%;
+      gap: 25px;
       text-align: center;
     }
 
-    .classes h2 {
-      color: #3f5145;
-      font-size: 32px;
-      margin-bottom: 35px;
+    .feature {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .feature span {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    /* CLASSES */
+
+    .classes {
+      padding: 110px 7%;
+      max-width: 1550px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-heading p:last-child {
+      max-width: 550px;
+      margin: auto;
+      color: var(--muted);
     }
 
     .class-grid {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
     }
 
     .class-card {
-      background-color: white;
-      padding: 35px 25px;
-      width: 280px;
-      border-radius: 10px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(38,55,44,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .class-card h3 {
-      color: #3f5145;
+    .class-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(38,55,44,0.13);
+    }
+
+    .class-card img {
+      height: 300px;
+      transition: transform 0.4s;
+    }
+
+    .class-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .class-image {
+      overflow: hidden;
+    }
+
+    .class-info {
+      padding: 32px;
+    }
+
+    .class-info .tag {
+      color: var(--sage);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .class-info h3 {
+      font-size: 28px;
+      margin: 10px 0;
+    }
+
+    .class-info p {
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 75px;
+    }
+
+    .class-info a {
+      display: inline-block;
+      margin-top: 22px;
+      color: var(--deep);
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--sage);
+      padding-bottom: 5px;
+    }
+
+    /* QUOTE */
+
+    .quote-section {
+      background: var(--sage);
+      color: white;
+      text-align: center;
+      padding: 90px 15%;
+    }
+
+    .quote-section .eyebrow {
+      color: #e5d9c7;
+    }
+
+    .quote-section blockquote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.4;
+      font-style: italic;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* BEGINNER SECTION */
+
+    .beginner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 550px;
+      background: #f0ebe3;
+    }
+
+    .beginner-image img {
+      height: 100%;
+      min-height: 500px;
+    }
+
+    .beginner-copy {
+      padding: 80px 12%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .beginner-copy .eyebrow {
+      color: var(--sage);
+    }
+
+    .beginner-copy p:not(.eyebrow) {
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 500px;
+    }
+
+    .beginner-copy .btn {
+      align-self: flex-start;
+    }
+
+    /* CTA */
+
+    .final-cta {
+      text-align: center;
+      padding: 105px 8%;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(36px, 5vw, 60px);
+      margin-bottom: 20px;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--deep);
+      color: white;
+      padding: 65px 8% 30px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand h3 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      color: #c6d0c7;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .footer-links a {
+      color: #dfe6df;
+      font-size: 13px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 25px;
+      text-align: center;
+      font-size: 12px;
+      color: #d3ddd3;
+    }
+
+    .footer-bottom p {
       margin-bottom: 10px;
     }
 
-    footer {
-      margin-top: 40px;
-      background-color: #3f5145;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .intro-photo img {
+        height: 430px;
+      }
+
+      .class-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .beginner {
+        grid-template-columns: 1fr;
+      }
+
+      .beginner-image img {
+        height: 400px;
+        min-height: 0;
+      }
     }
 
     @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
       nav {
         justify-content: center;
-        text-align: center;
+        padding: 20px 5%;
       }
 
       .logo {
         width: 100%;
-        margin-bottom: 10px;
+        text-align: center;
       }
 
-      nav a {
-        margin: 5px 8px;
+      .nav-links {
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 610px;
+        padding: 70px 7%;
+        background-position: center;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero-secondary {
+        display: block;
+        margin-left: 0;
+      }
+
+      .intro, .classes {
+        padding: 70px 7%;
+      }
+
+      .intro-photo img {
+        height: 360px;
+      }
+
+      .intro-photo::after {
+        right: 0;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .class-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .class-card img {
+        height: 270px;
+      }
+
+      .quote-section {
+        padding: 75px 8%;
+      }
+
+      .beginner-copy {
+        padding: 70px 8%;
+      }
+
+      .final-cta {
+        padding: 80px 7%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn, .class-card, .class-card img {
+        transition: none;
       }
     }
   </style>
@@ -135,65 +617,251 @@
 
 <body>
 
+  <!-- REQUIRED EDUCATIONAL DISCLAIMER -->
   <div class="notice">
     This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
   </div>
 
+  <!-- NAVIGATION -->
   <nav>
-    <div class="logo">Flow State</div>
+    <a class="logo" href="index.html">flow<span>state.</span> 🪷</a>
 
-    <div>
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="classes.html">Classes</a>
       <a href="beginner-yoga.html">Beginner Yoga</a>
-      <a href="about.html">About</a>
+      <a href="about.html">Our Story</a>
+      <a class="nav-button" href="classes.html">Explore Classes ↗</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <h1>🪷 Flow State Yoga</h1>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">A mindful space in Iowa City, Iowa</p>
 
-    <h2>Power. Heat. Restore.</h2>
+      <h1>Find your flow.<br><em>Feel your best.</em></h1>
 
-    <p>
-      Welcome to Flow State, an Iowa City yoga studio designed to help you move,
-      recharge, and feel your best. New to yoga or already experienced, you can
-      choose among Flow State's Power, Hot, and Restorative classes based on the
-      kind of movement you want that day. Created with college students and young
-      professionals in mind, Flow State offers a comfortable space to stay active,
-      reduce stress, and reset.
-    </p>
+      <h2>Power. Heat. Restore.</h2>
+
+      <p>
+        Welcome to Flow State Yoga, where movement meets mindfulness.
+        Explore yoga classes in Iowa City designed to help you
+        build strength, recharge your energy, and reconnect with yourself.
+      </p>
+
+      <a class="btn btn-light" href="classes.html">Explore Our Classes ↗</a>
+      <a class="hero-secondary" href="beginner-yoga.html">New to yoga? Start here →</a>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro-photo">
+      <img
+        src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=1000&q=85"
+        alt="Yoga practitioner stretching in a peaceful studio"
+        loading="lazy">
+    </div>
+
+    <div class="intro-copy">
+      <p class="eyebrow">Welcome to Flow State</p>
+
+      <h2>A little movement.<br><em>A lot of magic.</em></h2>
+
+      <p>
+        Life gets busy. Between classes, work, and everything in between,
+        finding time for yourself can feel impossible.
+        That's where Flow State comes in.
+      </p>
+
+      <p>
+        Created with college students and young professionals in mind,
+        our fictional Iowa City yoga studio offers an inviting place
+        to move, recharge, and feel your best.
+      </p>
+
+      <p>
+        Whether you're stepping onto the mat for the first time
+        or looking for a new challenge, there's a practice for you.
+      </p>
+
+      <a href="about.html" class="btn btn-dark">Get to Know Us ↗</a>
+    </div>
   </section>
 
-  <section class="classes">
-    <h2>Choose Your Practice</h2>
+  <!-- BENEFITS -->
+  <section class="features" aria-label="Our approach">
+    <div class="feature">
+      <span>🌿</span>
+      Mindful Movement
+    </div>
+
+    <div class="feature">
+      <span>✨</span>
+      Feel-Good Energy
+    </div>
+
+    <div class="feature">
+      <span>🧘</span>
+      A Practice for Everyone
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section class="classes" id="classes">
+    <div class="section-heading">
+      <p class="eyebrow">Find your perfect fit</p>
+      <h2>Choose Your Practice</h2>
+      <p>
+        Some days call for energy. Others call for stillness.
+        Find the yoga class that meets you where you are.
+      </p>
+    </div>
 
     <div class="class-grid">
 
-      <div class="class-card">
-        <h3>🔥 Power Yoga</h3>
-        <p>Build energy and strength with an active, movement-focused practice.</p>
-      </div>
+      <article class="class-card">
+        <div class="class-image">
+          <img
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85"
+            alt="Person practicing yoga outdoors in natural light"
+            loading="lazy">
+        </div>
 
-      <div class="class-card">
-        <h3>☀️ Hot Yoga</h3>
-        <p>Turn up the intensity with a heated yoga practice.</p>
-      </div>
+        <div class="class-info">
+          <span class="tag">Strength & Energy</span>
+          <h3>🔥 Power Yoga</h3>
+          <p>
+            Build energy and strength with an active,
+            movement-focused practice that keeps you flowing.
+          </p>
+          <a href="classes.html">Explore Power Yoga →</a>
+        </div>
+      </article>
 
-      <div class="class-card">
-        <h3>🌿 Restorative Yoga</h3>
-        <p>Slow things down with a calmer practice focused on resetting and recharging.</p>
-      </div>
+      <article class="class-card">
+        <div class="class-image">
+          <img
+            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85"
+            alt="Yoga and fitness practice in a bright indoor space"
+            loading="lazy">
+        </div>
+
+        <div class="class-info">
+          <span class="tag">Heat & Movement</span>
+          <h3>☀️ Hot Yoga</h3>
+          <p>
+            Turn up the intensity with a heated yoga practice
+            designed for movement, focus, and a fresh reset.
+          </p>
+          <a href="classes.html">Explore Hot Yoga →</a>
+        </div>
+      </article>
+
+      <article class="class-card">
+        <div class="class-image">
+          <img
+            src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=900&q=85"
+            alt="Calm yoga practice in a relaxing natural setting"
+            loading="lazy">
+        </div>
+
+        <div class="class-info">
+          <span class="tag">Rest & Recharge</span>
+          <h3>🌿 Restorative Yoga</h3>
+          <p>
+            Slow things down with a calming practice
+            focused on relaxation, resetting, and recharging.
+          </p>
+          <a href="classes.html">Explore Restorative Yoga →</a>
+        </div>
+      </article>
 
     </div>
   </section>
 
-  <footer>
-    <p>Flow State | Iowa City, Iowa</p>
-    <br>
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <p class="eyebrow">Your moment of calm</p>
+
+    <blockquote>
+      “You don't have to be perfect.
+      You just have to show up for yourself.”
+    </blockquote>
+  </section>
+
+  <!-- BEGINNER SECTION -->
+  <section class="beginner">
+    <div class="beginner-image">
+      <img
+        src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1100&q=85"
+        alt="Person doing a yoga pose on a mat in a peaceful studio"
+        loading="lazy">
+    </div>
+
+    <div class="beginner-copy">
+      <p class="eyebrow">New here? You're welcome.</p>
+
+      <h2>Every journey starts with one breath.</h2>
+
+      <p>
+        Never tried yoga before? No worries.
+        You don't need to be flexible, experienced,
+        or know a single pose to get started.
+      </p>
+
+      <p>
+        Our beginner yoga guide helps you understand what
+        to expect, what to bring, and how to feel
+        comfortable stepping onto the mat.
+      </p>
+
+      <a class="btn btn-dark" href="beginner-yoga.html">
+        Beginner Yoga Guide ↗
+      </a>
+    </div>
+  </section>
+
+  <!-- FINAL CALL TO ACTION -->
+  <section class="final-cta">
+    <p class="eyebrow" style="color:#647a68;">Move with intention</p>
+
+    <h2>Your flow starts here. 🪷</h2>
+
     <p>
-      This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+      A stronger body. A calmer mind. A little more time for you.
     </p>
+
+    <a class="btn btn-dark" href="classes.html">
+      Find Your Practice ↗
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>flowstate. 🪷</h3>
+        <p>Power. Heat. Restore.</p>
+        <p>Iowa City, Iowa</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="classes.html">Classes</a>
+        <a href="beginner-yoga.html">Beginner Yoga</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Flow State Yoga | University of Iowa Student Project</p>
+
+      <p>
+        This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+      </p>
+    </div>
   </footer>
 
 </body>
