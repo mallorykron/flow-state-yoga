@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,112 +6,630 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>About Flow State Yoga | Iowa City Yoga Studio</title>
-<meta name="description" content="Learn about Flow State Yoga, an Iowa City yoga studio offering welcoming yoga classes for beginners and experienced yogis.">
-  
+  <meta name="description" content="Learn about Flow State Yoga, an Iowa City yoga studio offering welcoming yoga classes for beginners and experienced yogis.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --sage: #647a68;
+      --deep: #293d32;
+      --cream: #faf8f3;
+      --sand: #eee7dc;
+      --muted: #6c756c;
+      --white: #ffffff;
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      color: #333;
-      background-color: #faf8f5;
-      line-height: 1.6;
+      font-family: 'DM Sans', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--deep);
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 500;
     }
 
     .notice {
-      background-color: #3f5145;
+      background: var(--deep);
       color: white;
       text-align: center;
-      padding: 10px 20px;
-      font-size: 14px;
+      padding: 10px 18px;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
+    /* NAVIGATION */
+
     nav {
-      background-color: white;
-      padding: 20px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 22px 7%;
+      background: rgba(250,248,243,0.98);
+      gap: 20px;
       flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #3f5145;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -1px;
     }
 
-    nav a {
-      color: #333;
-      text-decoration: none;
-      margin-left: 20px;
+    .logo span {
+      color: var(--sage);
     }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--sage);
+    }
+
+    .nav-button {
+      background: var(--deep);
+      color: white !important;
+      padding: 12px 22px;
+      border-radius: 30px;
+    }
+
+    /* SHARED DESIGN */
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--sage);
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: transform 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-dark {
+      background: var(--deep);
+      color: white;
+    }
+
+    .btn-light {
+      background: var(--cream);
+      color: var(--deep);
+    }
+
+    /* HERO */
 
     .hero {
-      background-color: #e8e1d8;
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 80px 10%;
+      color: white;
+      padding: 100px 8%;
+      background:
+        linear-gradient(rgba(25,42,32,0.66), rgba(25,42,32,0.42)),
+        url('https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=1800&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero .eyebrow {
+      color: #e9d7bd;
     }
 
     .hero h1 {
-      color: #3f5145;
-      font-size: 44px;
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 em {
+      color: #e9d7bd;
+      font-weight: 400;
+    }
+
+    .hero p:not(.eyebrow) {
+      max-width: 680px;
+      margin: 0 auto 30px;
+      font-size: 17px;
+      color: #f4f0ea;
+    }
+
+    /* INTRODUCTION */
+
+    .intro {
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+      padding: 110px 8%;
+    }
+
+    .intro h2 {
+      font-size: clamp(36px, 4vw, 56px);
+      line-height: 1.25;
+      margin-bottom: 25px;
+    }
+
+    .intro h2 em {
+      color: var(--sage);
+      font-weight: 400;
+    }
+
+    .intro p:last-child {
+      max-width: 690px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* OUR STORY */
+
+    .story-section {
+      max-width: 1400px;
+      margin: auto;
+      padding: 0 8% 110px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .story-image {
+      position: relative;
+    }
+
+    .story-image img {
+      height: 580px;
+      border-radius: 12px;
+      box-shadow: 0 20px 45px rgba(38,55,44,0.1);
+    }
+
+    .story-copy h2 {
+      font-size: clamp(38px, 4vw, 58px);
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+
+    .story-copy h2 em {
+      color: var(--sage);
+      font-weight: 400;
+    }
+
+    .story-copy p:not(.eyebrow) {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    /* MISSION */
+
+    .mission-section {
+      background: var(--sand);
+      padding: 105px 8%;
+    }
+
+    .mission-inner {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .mission-inner h2 {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+
+    .mission-inner h2 em {
+      color: var(--sage);
+      font-weight: 400;
+    }
+
+    .mission-inner > p:last-child {
+      max-width: 720px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* VALUES */
+
+    .values-section {
+      padding: 110px 8%;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(36px, 4vw, 55px);
+      margin-bottom: 18px;
+    }
+
+    .section-heading p:last-child {
+      color: var(--muted);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .value-card {
+      background: white;
+      padding: 45px 35px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(38,55,44,0.06);
+      transition: transform 0.3s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .value-icon {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .value-card h3 {
+      font-size: 29px;
       margin-bottom: 15px;
     }
 
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
+    .value-card p {
+      font-size: 14px;
+      color: var(--muted);
     }
 
-    .content {
+    /* APPROACH */
+
+    .approach-section {
+      background: #f0f2ec;
+      padding: 110px 8%;
+    }
+
+    .approach-inner {
+      max-width: 1400px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .approach-copy h2 {
+      font-size: clamp(38px, 4vw, 58px);
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+
+    .approach-copy h2 em {
+      color: var(--sage);
+      font-weight: 400;
+    }
+
+    .approach-copy p:not(.eyebrow) {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .approach-image img {
+      height: 550px;
+      border-radius: 12px;
+    }
+
+    /* WHO WE SERVE */
+
+    .community-section {
+      padding: 110px 8%;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .community-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(38,55,44,0.07);
+    }
+
+    .community-card img {
+      height: 250px;
+    }
+
+    .community-copy {
+      padding: 30px;
+    }
+
+    .community-copy h3 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .community-copy p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* QUOTE */
+
+    .quote-section {
+      background: var(--sage);
+      color: white;
+      padding: 100px 12%;
+      text-align: center;
+    }
+
+    .quote-section .eyebrow {
+      color: #e9d7bd;
+    }
+
+    .quote-section blockquote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(30px, 4vw, 49px);
+      line-height: 1.4;
       max-width: 900px;
       margin: auto;
-      padding: 60px 8%;
     }
 
-    .section {
-      background-color: white;
-      padding: 30px;
-      margin-bottom: 25px;
-      border-radius: 10px;
+    /* GALLERY */
+
+    .gallery-section {
+      padding: 110px 8%;
+      max-width: 1400px;
+      margin: auto;
     }
 
-    .section h2 {
-      color: #3f5145;
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      height: 350px;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* CTA */
+
+    .final-cta {
+      padding: 100px 8%;
+      text-align: center;
+      background: var(--sand);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(38px, 5vw, 62px);
+      margin-bottom: 20px;
+    }
+
+    .final-cta p:not(.eyebrow) {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--deep);
+      color: white;
+      padding: 65px 8% 30px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand h3 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      color: #c6d0c7;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .footer-links a {
+      color: #dfe6df;
+      font-size: 13px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 25px;
+      text-align: center;
+      font-size: 12px;
+      color: #d3ddd3;
+    }
+
+    .footer-bottom p {
       margin-bottom: 10px;
     }
 
-    footer {
-      background-color: #3f5145;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 40px;
-    }
+    /* RESPONSIVE DESIGN */
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 34px;
+    @media (max-width: 950px) {
+      .story-section,
+      .approach-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
 
+      .story-image img,
+      .approach-image img {
+        height: 420px;
+      }
+
+      .values-grid,
+      .community-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
       nav {
         justify-content: center;
-        text-align: center;
+        padding: 20px 5%;
       }
 
       .logo {
         width: 100%;
-        margin-bottom: 10px;
+        text-align: center;
       }
 
-      nav a {
-        margin: 5px 8px;
+      .nav-links {
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 490px;
+        padding: 75px 7%;
+      }
+
+      .intro {
+        padding: 75px 7%;
+      }
+
+      .story-section {
+        padding: 0 7% 80px;
+      }
+
+      .story-image img,
+      .approach-image img {
+        height: 330px;
+      }
+
+      .mission-section,
+      .approach-section,
+      .values-section,
+      .community-section,
+      .gallery-section {
+        padding: 80px 7%;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid img {
+        height: 300px;
+      }
+
+      .quote-section {
+        padding: 75px 8%;
+      }
+
+      .final-cta {
+        padding: 80px 7%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn, .value-card, .gallery-grid img {
+        transition: none;
       }
     }
   </style>
@@ -118,68 +637,369 @@
 
 <body>
 
+  <!-- REQUIRED DISCLAIMER -->
   <div class="notice">
     This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
   </div>
 
+  <!-- NAVIGATION -->
   <nav>
-    <div class="logo">Flow State</div>
+    <a class="logo" href="index.html">flow<span>state.</span> 🪷</a>
 
-    <div>
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="classes.html">Classes</a>
       <a href="beginner-yoga.html">Beginner Yoga</a>
-      <a href="about.html">About</a>
+      <a href="about.html" aria-current="page">Our Story</a>
+      <a class="nav-button" href="classes.html">Explore Classes ↗</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <h1>About Flow State</h1>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Get to know Flow State</p>
+
+      <h1>More than movement.<br><em>A way to reconnect.</em></h1>
+
+      <p>
+        A yoga studio concept inspired by the belief
+        that everyone deserves a little more balance,
+        a little more movement, and a little more time
+        for themselves.
+      </p>
+
+      <a class="btn btn-light" href="#our-story">
+        Discover Our Story ↓
+      </a>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <p class="eyebrow">The heart behind the concept</p>
+
+    <h2>Find your movement.<br><em>Find your flow.</em></h2>
+
     <p>
-      Movement that fits your life, your energy, and your goals.
+      Flow State Yoga is a fictional Iowa City yoga studio
+      created for a University of Iowa digital marketing project.
+      The concept is designed around making movement feel
+      approachable, enjoyable, and easy to fit into everyday life.
     </p>
   </section>
 
-  <main class="content">
+  <main>
 
-    <section class="section">
-      <h2>Our Story</h2>
-      <p>
-        Flow State is a fictional yoga studio concept based in Iowa City.
-        It was created with college students and young professionals in mind,
-        offering a comfortable place to move, recharge, and take a break from
-        a busy schedule.
-      </p>
+    <!-- OUR STORY -->
+    <section class="story-section" id="our-story">
+      <div class="story-image">
+        <img
+          src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1100&q=85"
+          alt="Yoga practice in a peaceful wellness studio setting"
+          loading="lazy">
+      </div>
+
+      <div class="story-copy">
+        <p class="eyebrow">How it all began</p>
+
+        <h2>Our <em>story.</em></h2>
+
+        <p>
+          Life gets busy. Between classes, work, social
+          commitments, and everything in between,
+          making time for yourself can feel difficult.
+        </p>
+
+        <p>
+          Flow State was imagined as a welcoming yoga
+          studio concept for college students and young
+          professionals in Iowa City who want a comfortable
+          way to stay active and recharge.
+        </p>
+
+        <p>
+          Instead of focusing on perfection or experience,
+          the idea behind Flow State is simple:
+          create a space where movement fits your life,
+          your energy, and your goals.
+        </p>
+
+        <a class="btn btn-dark" href="beginner-yoga.html">
+          New to Yoga? Start Here ↗
+        </a>
+      </div>
     </section>
 
-    <section class="section">
-      <h2>Our Approach</h2>
-      <p>
-        We believe yoga can look different for everyone. Some days call for
-        energy and movement, while others call for slowing down. That is why
-        Flow State offers Power Yoga, Hot Yoga, and Restorative Yoga so visitors
-        can choose the practice that works for them.
-      </p>
+    <!-- OUR MISSION -->
+    <section class="mission-section">
+      <div class="mission-inner">
+        <p class="eyebrow">Our purpose</p>
+
+        <h2>Making wellness feel<br><em>a little more human.</em></h2>
+
+        <p>
+          Our mission is to make yoga feel accessible
+          to people at every experience level.
+          Whether you're looking to build strength,
+          slow down, or simply take a break from
+          a busy day, Flow State is designed to
+          help you find a practice that feels right.
+        </p>
+      </div>
     </section>
 
-    <section class="section">
-      <h2>Who We Serve</h2>
+    <!-- CORE VALUES -->
+    <section class="values-section">
+      <div class="section-heading">
+        <p class="eyebrow">What matters to us</p>
+
+        <h2>The values behind the flow.</h2>
+
+        <p>
+          Three simple ideas guide the Flow State concept.
+        </p>
+      </div>
+
+      <div class="values-grid">
+
+        <article class="value-card">
+          <div class="value-icon">🌿</div>
+          <h3>Balance</h3>
+          <p>
+            Wellness isn't about doing more every day.
+            Sometimes it's about slowing down,
+            taking a breath, and finding a rhythm
+            that works for you.
+          </p>
+        </article>
+
+        <article class="value-card">
+          <div class="value-icon">🤍</div>
+          <h3>Belonging</h3>
+          <p>
+            Yoga should feel welcoming whether
+            you're stepping onto a mat for the
+            first time or returning to a
+            familiar practice.
+          </p>
+        </article>
+
+        <article class="value-card">
+          <div class="value-icon">✨</div>
+          <h3>Growth</h3>
+          <p>
+            Every small step matters.
+            We believe in progress over perfection
+            and finding joy in the process
+            of learning something new.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section class="approach-section">
+      <div class="approach-inner">
+
+        <div class="approach-copy">
+          <p class="eyebrow">Our philosophy</p>
+
+          <h2>Different days.<br><em>Different flows.</em></h2>
+
+          <p>
+            We believe yoga can look different for everyone.
+            Some days call for energy and movement.
+            Others call for rest, quiet, and a chance
+            to reset.
+          </p>
+
+          <p>
+            That's why the Flow State concept includes
+            three styles of yoga: Power Yoga,
+            Hot Yoga, and Restorative Yoga.
+          </p>
+
+          <p>
+            Each class style offers a different
+            experience, making it easier to choose
+            a practice that matches your mood,
+            energy, and comfort level.
+          </p>
+
+          <a class="btn btn-dark" href="classes.html">
+            Discover Our Classes ↗
+          </a>
+        </div>
+
+        <div class="approach-image">
+          <img
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1100&q=85"
+            alt="Person practicing mindful yoga and meditation"
+            loading="lazy">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHO WE SERVE -->
+    <section class="community-section">
+      <div class="section-heading">
+        <p class="eyebrow">A space for every journey</p>
+
+        <h2>Who we created Flow State for.</h2>
+
+        <p>
+          Movement and wellness should fit into real life.
+        </p>
+      </div>
+
+      <div class="community-grid">
+
+        <article class="community-card">
+          <img
+            src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=900&q=85"
+            alt="Yoga practice in a calm indoor environment"
+            loading="lazy">
+
+          <div class="community-copy">
+            <h3>🎓 College Students</h3>
+            <p>
+              For students balancing classes,
+              studying, and busy schedules
+              who want a little time to move,
+              relax, and recharge.
+            </p>
+          </div>
+        </article>
+
+        <article class="community-card">
+          <img
+            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85"
+            alt="Active movement and stretching in a fitness setting"
+            loading="lazy">
+
+          <div class="community-copy">
+            <h3>🌸 Young Professionals</h3>
+            <p>
+              For people looking to build
+              movement and mindful moments
+              into their routines alongside
+              work and everyday responsibilities.
+            </p>
+          </div>
+        </article>
+
+        <article class="community-card">
+          <img
+            src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=900&q=85"
+            alt="Person practicing yoga on a mat"
+            loading="lazy">
+
+          <div class="community-copy">
+            <h3>🪷 Yoga Beginners</h3>
+            <p>
+              For anyone curious about yoga
+              who wants a welcoming introduction
+              without feeling pressured to
+              know every pose.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+      <p class="eyebrow">The Flow State mindset</p>
+
+      <blockquote>
+        “You don't have to change your life
+        to make room for wellness.
+        Just make a little space for yourself.”
+      </blockquote>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="gallery-section">
+      <div class="section-heading">
+        <p class="eyebrow">Inspired by movement</p>
+
+        <h2>Moments of mindfulness. 🌿</h2>
+
+        <p>
+          A little visual inspiration for your own yoga journey.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <img
+          src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=900&q=85"
+          alt="Calm yoga and stretching practice"
+          loading="lazy">
+
+        <img
+          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85"
+          alt="Mindful meditation and yoga practice"
+          loading="lazy">
+
+        <img
+          src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=900&q=85"
+          alt="Yoga practitioner enjoying a peaceful movement session"
+          loading="lazy">
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <p class="eyebrow">Find your flow</p>
+
+      <h2>Come as you are. 🪷</h2>
+
       <p>
-        Flow State is designed for people looking for an approachable way to
-        add movement and wellness to their routine. Whether someone is completely
-        new to yoga or already has experience, the goal is to make choosing a
-        class simple and welcoming.
+        Whether you're looking for strength,
+        movement, or a moment to slow down,
+        explore the yoga class styles
+        imagined for Flow State.
       </p>
+
+      <a class="btn btn-dark" href="classes.html">
+        Explore Yoga Classes ↗
+      </a>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>Flow State | Iowa City, Iowa</p>
-    <br>
-    <p>
-      This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
-    </p>
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <h3>flowstate. 🪷</h3>
+        <p>Power. Heat. Restore.</p>
+        <p>Iowa City, Iowa</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="classes.html">Classes</a>
+        <a href="beginner-yoga.html">Beginner Yoga</a>
+        <a href="about.html">Our Story</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Flow State Yoga | University of Iowa Student Project</p>
+
+      <p>
+        This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+      </p>
+    </div>
   </footer>
 
 </body>
